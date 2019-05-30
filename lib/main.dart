@@ -20,7 +20,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: Text(title, style: TextStyle(color: Colors.white),),),
+      appBar: MyAppBar(
+        title: Row(
+              children: <Widget>[
+                Expanded(child: Text(title, style: TextStyle(color: Colors.white),),),
+                InkWell(
+                  child: Icon(Icons.search),
+                  onTap:(){
+                    Navigator.popUntil(context,
+                        ModalRoute.withName(Navigator.defaultRouteName));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            SearchScreen()));
+                    
+                  } ,
+                )
+            
+              ],
+            ),
+        ),
       body: Futureb(),
       drawer: MyDrawer(),
     );

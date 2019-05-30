@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:libraryapp/default_pages/search.dart';
 import 'package:libraryapp/default_pages/searchwidget.dart';
 import 'package:libraryapp/login_pages/loginemail.dart';
 import 'package:libraryapp/login_pages/registerpage.dart';
@@ -16,12 +17,7 @@ class MyAppBar extends AppBar {
             key: key,
             elevation: 0.1,
             backgroundColor: Colors.deepPurpleAccent[700],
-            title: Row(
-              children: <Widget>[
-                Expanded(child: title,),
-            
-              ],
-            ),
+            title: title,
         );
             /**/
         
